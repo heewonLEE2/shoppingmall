@@ -1,6 +1,7 @@
 package BOproject.model;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 public class OrderVO implements Serializable{
 
@@ -13,11 +14,13 @@ public class OrderVO implements Serializable{
 	private int ototal;
 	private String oaddress;
 	private String cid;
+	private Timestamp odate;
 	
 	public OrderVO() {
 	}
 
-	public OrderVO(int oid, int pid, String user_id, int oamount, int ototal, String oaddress, String cid) {
+	public OrderVO(int oid, int pid, String user_id, int oamount, int ototal, String oaddress, String cid,
+			Timestamp odate) {
 		this.oid = oid;
 		this.pid = pid;
 		this.user_id = user_id;
@@ -25,6 +28,7 @@ public class OrderVO implements Serializable{
 		this.ototal = ototal;
 		this.oaddress = oaddress;
 		this.cid = cid;
+		this.odate = odate;
 	}
 
 	public int getOid() {
@@ -83,10 +87,20 @@ public class OrderVO implements Serializable{
 		this.cid = cid;
 	}
 
+	public Timestamp getOdate() {
+		return odate;
+	}
+
+	public void setOdate(Timestamp odate) {
+		this.odate = odate;
+	}
+
 	@Override
 	public String toString() {
 		return "OrderVO [oid=" + oid + ", pid=" + pid + ", user_id=" + user_id + ", oamount=" + oamount + ", ototal="
-				+ ototal + ", oaddress=" + oaddress + ", cid=" + cid + "]";
+				+ ototal + ", oaddress=" + oaddress + ", cid=" + cid + ", odate=" + odate + "]";
 	}
+
+	
 	
 }
