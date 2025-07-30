@@ -21,4 +21,43 @@ public class UserServiceImpl implements UserService{
 		return userDao.listUser();
 	}
 	
+	@Override
+	public UserVO getUser(String user_id) throws SQLException {
+		return userDao.getUser(user_id);
+	}
+	
+	@Override
+	public int registUser(UserVO user) throws SQLException {
+		return userDao.registUser(user);
+	}
+	
+	@Override
+	public int modifyUser(UserVO user) throws SQLException {
+		return userDao.modifyUser(user);
+	}
+	
+	@Override
+	public int removeUser(String user_id) throws SQLException {
+		return userDao.removeUser(user_id);
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

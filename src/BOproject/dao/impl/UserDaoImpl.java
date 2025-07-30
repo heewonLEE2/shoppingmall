@@ -60,10 +60,9 @@ public class UserDaoImpl implements UserDao{
 		return user;
 	}
 	
-	
 	@Override
 	public int registUser(UserVO user) throws SQLException {
-		String sql = " insert into Article values(?, ?, ?, ?, ?) ";
+		String sql = " insert into user_tb values(?, ?, ?, ?, ?) ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, user.getUser_id());
 		pstmt.setString(2, user.getUname());
@@ -72,19 +71,27 @@ public class UserDaoImpl implements UserDao{
 		pstmt.setString(5, user.getUphone());
 		return pstmt.executeUpdate();
 	}
-	
 
 	
 	@Override
 	public int modifyUser(UserVO user) throws SQLException {
-		return 0;
+		String sql = " update user_tb set uname=?, upass=?, uaddress=?, uphone=? where user_id=? ";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, user.getUname());
+		pstmt.setString(2, user.getUpass());
+		pstmt.setString(3, user.getUaddress());
+		pstmt.setString(4, user.getUphone());
+		pstmt.setString(5, user.getUser_id());
+		return pstmt.executeUpdate();
 	}
+	
 	@Override
-	public int removeUser(UserVO user_id) throws SQLException {
-		return 0;
+	public int removeUser(String user_id) throws SQLException {
+			String sql = " delete user_tb where user_id=? ";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, user_id);
+			return pstmt.executeUpdate();
 	}
-	
-	
 }
 
 

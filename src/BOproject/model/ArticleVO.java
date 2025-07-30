@@ -1,6 +1,7 @@
 package BOproject.model;
 
 import java.sql.Timestamp;
+import java.util.Arrays;
 
 public class ArticleVO {
 
@@ -11,15 +12,15 @@ public class ArticleVO {
 	private String atitle;
 	private String acontent;
 	private int alikeCount;
-	private byte aimgFile;
+	private byte[] aimgFile;
 	private String cid;
 	private Timestamp adate;
 	
 	public ArticleVO() {
 	}
 
-	public ArticleVO(int aid, String user_id, String atitle, String acontent, int alikeCount, byte aimgFile, String cid,
-			Timestamp adate) {
+	public ArticleVO(int aid, String user_id, String atitle, String acontent, int alikeCount, byte[] aimgFile,
+			String cid, Timestamp adate) {
 		this.aid = aid;
 		this.user_id = user_id;
 		this.atitle = atitle;
@@ -70,11 +71,11 @@ public class ArticleVO {
 		this.alikeCount = alikeCount;
 	}
 
-	public byte getAimgFile() {
+	public byte[] getAimgFile() {
 		return aimgFile;
 	}
 
-	public void setAimgFile(byte aimgFile) {
+	public void setAimgFile(byte[] aimgFile) {
 		this.aimgFile = aimgFile;
 	}
 
@@ -97,8 +98,9 @@ public class ArticleVO {
 	@Override
 	public String toString() {
 		return "ArticleVO [aid=" + aid + ", user_id=" + user_id + ", atitle=" + atitle + ", acontent=" + acontent
-				+ ", alikeCount=" + alikeCount + ", aimgFile=" + aimgFile + ", cid=" + cid + ", adate=" + adate + "]";
+				+ ", alikeCount=" + alikeCount + ", aimgFile=" + Arrays.toString(aimgFile) + ", cid=" + cid + ", adate="
+				+ adate + "]";
 	}
-	
+
 	
 }
