@@ -1,5 +1,7 @@
 package BOproject.model;
 
+import java.sql.Timestamp;
+
 public class ArticleVO {
 
 	private static final long serialVersionUID = 12336632238L;
@@ -11,12 +13,13 @@ public class ArticleVO {
 	private int alikeCount;
 	private byte aimgFile;
 	private String cid;
+	private Timestamp adate;
 	
 	public ArticleVO() {
 	}
 
-	public ArticleVO(int aid, String user_id, String atitle, String acontent, int alikeCount, byte aimgFile,
-			String cid) {
+	public ArticleVO(int aid, String user_id, String atitle, String acontent, int alikeCount, byte aimgFile, String cid,
+			Timestamp adate) {
 		this.aid = aid;
 		this.user_id = user_id;
 		this.atitle = atitle;
@@ -24,6 +27,7 @@ public class ArticleVO {
 		this.alikeCount = alikeCount;
 		this.aimgFile = aimgFile;
 		this.cid = cid;
+		this.adate = adate;
 	}
 
 	public int getAid() {
@@ -82,10 +86,18 @@ public class ArticleVO {
 		this.cid = cid;
 	}
 
+	public Timestamp getAdate() {
+		return adate;
+	}
+
+	public void setAdate(Timestamp adate) {
+		this.adate = adate;
+	}
+
 	@Override
 	public String toString() {
 		return "ArticleVO [aid=" + aid + ", user_id=" + user_id + ", atitle=" + atitle + ", acontent=" + acontent
-				+ ", alikeCount=" + alikeCount + ", aimgFile=" + aimgFile + ", cid=" + cid + "]";
+				+ ", alikeCount=" + alikeCount + ", aimgFile=" + aimgFile + ", cid=" + cid + ", adate=" + adate + "]";
 	}
 	
 	

@@ -1,6 +1,7 @@
 package BOproject.model;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 public class ReplyVO implements Serializable{
 
@@ -10,15 +11,17 @@ public class ReplyVO implements Serializable{
 	private String rcontent;
 	private String user_id;
 	private int aid;
+	private Timestamp rdate;
 	
 	public ReplyVO() {
 	}
 
-	public ReplyVO(int rid, String rcontent, String user_id, int aid) {
+	public ReplyVO(int rid, String rcontent, String user_id, int aid, Timestamp rdate) {
 		this.rid = rid;
 		this.rcontent = rcontent;
 		this.user_id = user_id;
 		this.aid = aid;
+		this.rdate = rdate;
 	}
 
 	public int getRid() {
@@ -53,10 +56,20 @@ public class ReplyVO implements Serializable{
 		this.aid = aid;
 	}
 
+	public Timestamp getRdate() {
+		return rdate;
+	}
+
+	public void setRdate(Timestamp rdate) {
+		this.rdate = rdate;
+	}
+
 	@Override
 	public String toString() {
-		return "ReplyVO [rid=" + rid + ", rcontent=" + rcontent + ", user_id=" + user_id + ", aid=" + aid + "]";
+		return "ReplyVO [rid=" + rid + ", rcontent=" + rcontent + ", user_id=" + user_id + ", aid=" + aid + ", rdate="
+				+ rdate + "]";
 	}
+
 	
 	
 }

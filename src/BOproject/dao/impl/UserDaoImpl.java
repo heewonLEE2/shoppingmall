@@ -40,6 +40,50 @@ public class UserDaoImpl implements UserDao{
 		}
 		return userList;
 	}
+	@Override
+	public UserVO getUser(String user_id) throws SQLException {
+		String sql = " select user_id, uname, upass, uaddress, uphone "
+				+ " from user_tb where user_id=? ";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, user_id);
+		rs = pstmt.executeQuery();
+		UserVO user = new UserVO();
+		if(rs!=null) {
+			while(rs.next()) {
+				user.setUser_id(rs.getString("user_id"));
+				user.setUname(rs.getString("uname"));
+				user.setUpass(rs.getString("upass"));
+				user.setUaddress(rs.getString("uaddress"));
+				user.setUphone(rs.getString("uphone"));
+			}
+		}
+		return user;
+	}
+	
+	
+	@Override
+	public int registUser(UserVO user) throws SQLException {
+		String sql = " insert into Article values(?, ?, ?, ?, ?) ";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, user.getUser_id());
+		pstmt.setString(2, user.getUname());
+		pstmt.setString(3, user.getUpass());
+		pstmt.setString(4, user.getUaddress());
+		pstmt.setString(5, user.getUphone());
+		return pstmt.executeUpdate();
+	}
+	
+
+	
+	@Override
+	public int modifyUser(UserVO user) throws SQLException {
+		return 0;
+	}
+	@Override
+	public int removeUser(UserVO user_id) throws SQLException {
+		return 0;
+	}
+	
 	
 }
 
