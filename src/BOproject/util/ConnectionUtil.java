@@ -11,9 +11,9 @@ import java.sql.SQLException;
 public final class ConnectionUtil {
 	
 	private static ConnectionUtil connectionUtil = new ConnectionUtil();
-	private static final String JDBC_URL = "jdbc:oracle:thin:@localhost:1521:xe";  
-	private static final String USERNAME = "JDBC";
-	private static final String PASSWORD = "JDBC";
+	private static final String BO_URL = "jdbc:oracle:thin:@localhost:1521:xe";  
+	private static final String USERNAME = "BO";
+	private static final String PASSWORD = "BO";
 
 	private Connection conn;
 
@@ -27,7 +27,7 @@ public final class ConnectionUtil {
 	public Connection getConnection() {
 		try {
 			conn = DriverManager.getConnection(
-					JDBC_URL,
+					BO_URL,
 					USERNAME,
 					PASSWORD);
 		} catch (SQLException sqle) {
