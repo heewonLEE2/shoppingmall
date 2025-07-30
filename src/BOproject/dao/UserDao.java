@@ -15,8 +15,6 @@ public interface UserDao {
 	
 	public abstract int modifyUser(UserVO user) throws SQLException;
 	
-	public abstract int removeUser(UserVO user_id) throws SQLException;
-	
-	
+	public abstract int removeUser(String user_id) throws SQLException;
 	
 }
