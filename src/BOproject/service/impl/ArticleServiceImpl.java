@@ -1,38 +1,44 @@
 package BOproject.service.impl;
 
 import java.sql.SQLException;
+
 import java.util.List;
 
+import BOproject.dao.ArticleDao;
+import BOproject.dao.impl.ArticleDaoimpl;
+import BOproject.dao.impl.ProductDaoImpl;
 import BOproject.model.ArticleVO;
 import BOproject.service.ArticleService;
 
 public class ArticleServiceImpl implements ArticleService{
 
+	ArticleDao articleDao;
+	
+	public ArticleServiceImpl() {
+		articleDao = new ArticleDaoimpl();
+	}
+	
 	@Override
 	public List<ArticleVO> listArticle() throws SQLException {
-		return null;
+		return articleDao.listArticle();
 	}
 	
 	@Override
 	public ArticleVO getArticle(int aid) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		return articleDao.getArticle(aid);
 	}
 	@Override
 	public int registArticle(ArticleVO article) throws SQLException {
-		// TODO Auto-generated method stub
-		return 0;
+		return articleDao.registArticle(article);
 	}
 	
 	@Override
 	public int modifyArticle(ArticleVO article) throws SQLException {
-		// TODO Auto-generated method stub
-		return 0;
+		return articleDao.modifyArticle(article);
 	}
 	@Override
 	public int removeArticle(int aid) throws SQLException {
-		// TODO Auto-generated method stub
-		return 0;
+		return articleDao.removeArticle(aid);
 	}
 	
 }
