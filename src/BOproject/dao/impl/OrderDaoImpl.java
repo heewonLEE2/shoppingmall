@@ -25,7 +25,7 @@ public class OrderDaoImpl implements OrderDao{
 	@Override
 	public List<OrderVO> listOrder() throws SQLException {
 		String sql = " select oid, pid, user_id, oamount, ototal, oaddress, cid, odate "
-				+ " from ORDER_TB ";
+				+ " from bo.ORDER_TB ";
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
 		List<OrderVO> orderList = new ArrayList<OrderVO>();
@@ -49,7 +49,7 @@ public class OrderDaoImpl implements OrderDao{
 	@Override
 	public OrderVO getOrder(int oid) throws SQLException {
 		String sql = " select oid, pid, user_id, oamount, ototal, oaddress, cid, odate "
-				+ " from ORDER_TB where oid=? ";
+				+ " from bo.ORDER_TB where oid=? ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, oid);
 		rs = pstmt.executeQuery();
@@ -71,7 +71,7 @@ public class OrderDaoImpl implements OrderDao{
 	
 	@Override
 	public int registOrder(OrderVO order) throws SQLException {
-		String sql = " insert into ORDER_TB values(seq_order_tb.nextval, ?, ?, ?, ?, ?, ?, systimestamp) ";
+		String sql = " insert into bo.ORDER_TB values(seq_order_tb.nextval, ?, ?, ?, ?, ?, ?, systimestamp) ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, order.getPid());
 		pstmt.setString(2, order.getUser_id());
@@ -84,7 +84,7 @@ public class OrderDaoImpl implements OrderDao{
 	
 	@Override
 	public int modifyOrder(OrderVO order) throws SQLException {
-		String sql = " update ORDER_TB set oamount=?, ototal=?, oaddress=?, cid=?, odate=sysdate where oid=? ";
+		String sql = " update bo.ORDER_TB set oamount=?, ototal=?, oaddress=?, cid=?, odate=sysdate where oid=? ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, order.getOamount());
 		pstmt.setInt(2, order.getOtotal());
@@ -96,7 +96,7 @@ public class OrderDaoImpl implements OrderDao{
 
 	@Override
 	public int removeOrder(int oid) throws SQLException {
-		String sql = " delete ORDER_TB where oid=? ";
+		String sql = " delete bo.ORDER_TB where oid=? ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, oid);
 		return pstmt.executeUpdate();
