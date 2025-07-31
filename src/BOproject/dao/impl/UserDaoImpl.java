@@ -49,7 +49,7 @@ public class UserDaoImpl implements UserDao{
 		rs = pstmt.executeQuery();
 		UserVO user = new UserVO();
 		if(rs!=null) {
-			while(rs.next()) {
+			if(rs.next()) {
 				user.setUser_id(rs.getString("user_id"));
 				user.setUname(rs.getString("uname"));
 				user.setUpass(rs.getString("upass"));
