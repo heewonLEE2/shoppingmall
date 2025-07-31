@@ -71,19 +71,36 @@ public class OrderDaoImpl implements OrderDao{
 	
 	@Override
 	public int registOrder(OrderVO order) throws SQLException {
-		return 0;
+		String sql = " insert into ORDER_TB values(seq_order_tb.nextval, ?, ?, ?, ?, ?, ?, systimestamp) ";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, order.getPid());
+		pstmt.setString(2, order.getUser_id());
+		pstmt.setInt(3, order.getOamount());
+		pstmt.setInt(4, order.getOtotal());
+		pstmt.setString(5, order.getOaddress());
+		pstmt.setString(6, order.getCid());
+		return pstmt.executeUpdate();
 	}
 	
 	@Override
 	public int modifyOrder(OrderVO order) throws SQLException {
-		return 0;
+		String sql = " update ORDER_TB set oamount=?, ototal=?, oaddress=?, cid=?, odate=sysdate where oid=? ";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, order.getOamount());
+		pstmt.setInt(2, order.getOtotal());
+		pstmt.setString(3, order.getOaddress());
+		pstmt.setString(4, order.getCid());
+		pstmt.setInt(5, order.getOid());
+		return pstmt.executeUpdate();
 	}
 
 	@Override
 	public int removeOrder(int oid) throws SQLException {
-		return 0;
+		String sql = " delete ORDER_TB where oid=? ";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, oid);
+		return pstmt.executeUpdate();
 	}
-	
 	
 }
 
