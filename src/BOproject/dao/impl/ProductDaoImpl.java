@@ -24,7 +24,7 @@ public class ProductDaoImpl implements ProductDao{
 	
 	@Override
 	public List<ProductVO> listProduct() throws SQLException {
-		String sql = " SELECT pid, pname, pprice, pcontent, pimgurl, plikecount, cid FROM PRODUCT ";
+		String sql = " SELECT pid, pname, pprice, pcontent, pimgurl, plikecount, cid FROM bo.PRODUCT ";
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
 		List<ProductVO> productList = new ArrayList<ProductVO>();
@@ -46,7 +46,7 @@ public class ProductDaoImpl implements ProductDao{
 	
 	@Override
 	public ProductVO getProduct(int pid) throws SQLException {
-		String sql = " SELECT pid, pname, pprice, pcontent, pimgurl, plikecount, cid FROM PRODUCT where pid=?";
+		String sql = " SELECT pid, pname, pprice, pcontent, pimgurl, plikecount, cid FROM bo.PRODUCT where pid=?";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, pid);
 		rs = pstmt.executeQuery();
@@ -66,7 +66,7 @@ public class ProductDaoImpl implements ProductDao{
 	}
 	@Override
 	public int registProduct(ProductVO product) throws SQLException {
-		String sql = " insert into PRODUCT values(SEQ_PRODUCT.NEXTVAL, ?, ?, ?, ?, 0, ?) ";
+		String sql = " insert into bo.PRODUCT values(SEQ_PRODUCT.NEXTVAL, ?, ?, ?, ?, 0, ?) ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, product.getPname());
 		pstmt.setInt(2, product.getPprice());
@@ -78,7 +78,7 @@ public class ProductDaoImpl implements ProductDao{
 	
 	@Override
 	public int modifyProduct(ProductVO product) throws SQLException {
-		String sql = " update PRODUCT set pname=?, pprice=?, pcontent=?, PLIKECOUNT=? where pid=? ";
+		String sql = " update bo.PRODUCT set pname=?, pprice=?, pcontent=?, PLIKECOUNT=? where pid=? ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, product.getPname());
 		pstmt.setInt(2, product.getPprice());
@@ -90,7 +90,7 @@ public class ProductDaoImpl implements ProductDao{
 	
 	@Override
 	public int removeProduct(int pid) throws SQLException {
-		String sql = " delete PRODUCT where pid=? ";
+		String sql = " delete bo.PRODUCT where pid=? ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, pid);
 		return pstmt.executeUpdate();
