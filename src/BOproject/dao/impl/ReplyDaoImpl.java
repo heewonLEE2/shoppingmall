@@ -23,7 +23,7 @@ public class ReplyDaoImpl implements ReplyDao {
 	
 	@Override
 	public List<ReplyVO> listReply() throws SQLException {
-		String sql = " select rid, rcontent, user_id, aid, rdate " + " from reply ";
+		String sql = " select rid, rcontent, user_id, aid, rdate " + " from bo.reply ";
 		
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
@@ -45,7 +45,7 @@ public class ReplyDaoImpl implements ReplyDao {
 	@Override
 	public ReplyVO getReply(int rid) throws SQLException {
 		String sql = " select rid, rcontent, user_id, aid, rdate " 
-				+ " from reply where rid=? ";
+				+ " from bo.reply where rid=? ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, rid);
 		rs = pstmt.executeQuery();
@@ -65,7 +65,7 @@ public class ReplyDaoImpl implements ReplyDao {
 	
 	@Override
 	public int registReply(ReplyVO reply) throws SQLException {
-		String sql = " insert into reply values(seq_reply.nextval, ?, ?, ?, systimestamp) ";
+		String sql = " insert into bo.reply values(seq_reply.nextval, ?, ?, ?, systimestamp) ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1,  reply.getRcontent());
 		pstmt.setString(2,  reply.getUser_id());
@@ -75,7 +75,7 @@ public class ReplyDaoImpl implements ReplyDao {
 	
 	@Override
 	public int modifyReply(ReplyVO reply) throws SQLException {
-		String sql = " update reply set rcontent=?, rdate=sysdate where rid=? ";
+		String sql = " update bo.reply set rcontent=?, rdate=sysdate where rid=? ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1,  reply.getRcontent());
 		pstmt.setInt(2, reply.getRid());
@@ -84,7 +84,7 @@ public class ReplyDaoImpl implements ReplyDao {
 	
 	@Override
 	public int removeReply(int rid) throws SQLException {
-		String sql = " delete reply where rid=? ";
+		String sql = " delete bo.reply where rid=? ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, rid);
 		return pstmt.executeUpdate();

@@ -23,7 +23,7 @@ public class UserDaoImpl implements UserDao{
 	@Override
 	public List<UserVO> listUser() throws SQLException {
 		String sql = " select user_id, uname, upass, uaddress, uphone "
-				+ " from user_tb ";
+				+ " from bo.user_tb ";
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
 		List<UserVO> userList = new ArrayList<UserVO>();
@@ -43,7 +43,7 @@ public class UserDaoImpl implements UserDao{
 	@Override
 	public UserVO getUser(String user_id) throws SQLException {
 		String sql = " select user_id, uname, upass, uaddress, uphone "
-				+ " from user_tb where user_id=? ";
+				+ " from bo.user_tb where user_id=? ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, user_id);
 		rs = pstmt.executeQuery();
@@ -62,7 +62,7 @@ public class UserDaoImpl implements UserDao{
 	
 	@Override
 	public int registUser(UserVO user) throws SQLException {
-		String sql = " insert into user_tb values(?, ?, ?, ?, ?) ";
+		String sql = " insert into bo.user_tb values(?, ?, ?, ?, ?) ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, user.getUser_id());
 		pstmt.setString(2, user.getUname());
@@ -75,7 +75,7 @@ public class UserDaoImpl implements UserDao{
 	
 	@Override
 	public int modifyUser(UserVO user) throws SQLException {
-		String sql = " update user_tb set uname=?, upass=?, uaddress=?, uphone=? where user_id=? ";
+		String sql = " update bo.user_tb set uname=?, upass=?, uaddress=?, uphone=? where user_id=? ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, user.getUname());
 		pstmt.setString(2, user.getUpass());
@@ -87,7 +87,7 @@ public class UserDaoImpl implements UserDao{
 	
 	@Override
 	public int removeUser(String user_id) throws SQLException {
-			String sql = " delete user_tb where user_id=? ";
+			String sql = " delete bo.user_tb where user_id=? ";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, user_id);
 			return pstmt.executeUpdate();
