@@ -2,6 +2,7 @@ package BOproject.Main;
 
 import java.sql.SQLException;
 
+
 import BOproject.model.ProductVO;
 import BOproject.service.ProductService;
 import BOproject.service.UserService;
@@ -27,10 +28,5 @@ public class UserTestMain {
 		}
 	}
 }
-
-
-
-
-
 
 
