@@ -1,8 +1,6 @@
 package BOproject.server.path;
 
 import java.io.BufferedReader;
-
-
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
@@ -12,11 +10,12 @@ import com.google.gson.Gson;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
+import BOproject.model.UserVO;
 import BOproject.server.model.LoginDTO;
 import BOproject.service.UserService;
 import BOproject.service.impl.UserServiceImpl;
 
-public class LoginCheckServer implements HttpHandler {
+public class RegisterServer implements HttpHandler {
 
 	@Override
 	public void handle(HttpExchange exchange) throws IOException {
@@ -37,25 +36,30 @@ public class LoginCheckServer implements HttpHandler {
 			Gson gson = new Gson();
 			String response;
 			UserService userService = new UserServiceImpl();
-			
+
 			// 요청 본문 읽기
 			InputStreamReader isr = new InputStreamReader(exchange.getRequestBody(), StandardCharsets.UTF_8);
 			BufferedReader br = new BufferedReader(isr);
 			String requestData = br.readLine();
-			
+
 			System.out.println(requestData);
-			
-			LoginDTO loginDTO = gson.fromJson(requestData, LoginDTO.class);
+
+			UserVO userVO = gson.fromJson(requestData, UserVO.class);
 
 			try {
-				// 로그인 로직 수정: 사용자가 존재하면 성공
-				if (userService.getUser(loginDTO.getUser_id()).getUser_id() != null) {
-					System.out.println(userService.getUser(loginDTO.getUser_id()));
-					response = "로그인을 성공하였습니다.";
+				if (userService.getUser(userVO.getUser_id()).getUser_id() != null) {
+					response = "중복된 아이디 입니다.";
 				} else {
-					System.out.println(userService.getUser(loginDTO.getUser_id()));
-					response = "로그인을 실패하였습니다.";
+					// 로그인 로직 수정: 사용자가 존재하면 성공
+					if (userService.registUser(userVO) == 0) {
+						response = "회원가입을 실패하였습니다.";
+						System.out.println("회원가입 실패");
+					} else {
+						response = "회원가입을 성공하였습니다.";
+						System.out.println("회원가입 성공");
+					}
 				}
+
 			} catch (Exception e) {
 				e.printStackTrace();
 				response = "서버 오류가 발생했습니다.";
@@ -69,10 +73,13 @@ public class LoginCheckServer implements HttpHandler {
 		} else {
 			// POST가 아닌 다른 요청(GET 등)에 대한 처리
 			String response = "잘못된 요청입니다.";
-			exchange.sendResponseHeaders(405, response.getBytes(StandardCharsets.UTF_8).length); // 405 Method Not Allowed
+			exchange.sendResponseHeaders(405, response.getBytes(StandardCharsets.UTF_8).length); // 405 Method Not
+																									// Allowed
 			try (OutputStream os = exchange.getResponseBody()) {
 				os.write(response.getBytes(StandardCharsets.UTF_8));
 			}
 		}
+
 	}
+
 }

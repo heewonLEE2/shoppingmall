@@ -4,12 +4,12 @@ import java.sql.SQLException;
 
 import BOproject.service.ProductService;
 import BOproject.service.impl.ProductServiceImpl;
+import BOproject.util.ConnectionUtil;
 
 public class ProductTestMain {
-
-	
 	
 	public static void main(String[] args) {
+		
 		
 		ProductService productService = new ProductServiceImpl();
 		
