@@ -6,89 +6,94 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/pub2504/lib/auto-service-annotations-1.1.1.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/auto-service-annotations-1.1.1-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/byte-buddy-1.17.6.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/byte-buddy-1.17.6-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/cachedrowset-wrapper-1.0.2.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/commons-exec-1.5.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/commons-exec-1.5.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/error_prone_annotations-2.38.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/error_prone_annotations-2.38.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/failureaccess-1.0.3.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/failureaccess-1.0.3-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/gson-2.11.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/guava-33.4.8-jre.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/guava-33.4.8-jre-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/j2objc-annotations-3.0.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/j2objc-annotations-3.0.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/jackson-annotations-2.19.1.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/jackson-core-2.19.1.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/jackson-databind-2.19.1.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/jakarta.activation-2.0.1.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/jakarta.mail-2.0.1.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/jl1.0.1.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/jsoup-1.21.1.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/jspecify-1.0.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/jspecify-1.0.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/kotlin-stdlib-2.2.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/ojdbc6-11.2.0.4.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/okhttp-3.14.9.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/okio-1.17.5.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/opentelemetry-api-1.51.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/opentelemetry-api-1.51.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/opentelemetry-context-1.51.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/opentelemetry-context-1.51.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/opentelemetry-exporter-logging-1.51.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/opentelemetry-exporter-logging-1.51.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/opentelemetry-sdk-1.51.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/opentelemetry-sdk-1.51.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/opentelemetry-sdk-common-1.51.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/opentelemetry-sdk-common-1.51.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/opentelemetry-sdk-extension-autoconfigure-1.51.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/opentelemetry-sdk-extension-autoconfigure-1.51.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/opentelemetry-sdk-extension-autoconfigure-spi-1.51.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/opentelemetry-sdk-extension-autoconfigure-spi-1.51.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/opentelemetry-sdk-logs-1.51.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/opentelemetry-sdk-logs-1.51.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/opentelemetry-sdk-metrics-1.51.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/opentelemetry-sdk-metrics-1.51.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/opentelemetry-sdk-trace-1.51.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/opentelemetry-sdk-trace-1.51.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-api-4.34.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-api-4.34.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-chrome-driver-4.34.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-chrome-driver-4.34.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-chromium-driver-4.34.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-chromium-driver-4.34.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-devtools-v136-4.34.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-devtools-v136-4.34.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-devtools-v137-4.34.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-devtools-v137-4.34.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-devtools-v138-4.34.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-devtools-v138-4.34.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-edge-driver-4.34.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-edge-driver-4.34.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-firefox-driver-4.34.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-firefox-driver-4.34.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-http-4.34.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-http-4.34.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-ie-driver-4.34.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-ie-driver-4.34.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-java-4.34.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-java-4.34.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-json-4.34.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-json-4.34.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-manager-4.34.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-manager-4.34.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-os-4.34.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-os-4.34.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-remote-driver-4.34.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-remote-driver-4.34.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-safari-driver-4.34.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-safari-driver-4.34.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-support-4.34.0.jar"/>
-	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-support-4.34.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/auto-service-annotations-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/auto-service-annotations-1.1.1-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/byte-buddy-1.17.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/byte-buddy-1.17.6-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/commons-exec-1.5.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/commons-exec-1.5.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/commons-lang3-3.18.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/dotenv-java-3.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/error_prone_annotations-2.38.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/error_prone_annotations-2.38.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/failureaccess-1.0.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/failureaccess-1.0.3-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/gson-2.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/guava-33.4.8-jre.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/guava-33.4.8-jre-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/j2objc-annotations-3.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/j2objc-annotations-3.0.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/jackson-annotations-2.19.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/jackson-core-2.19.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/jackson-databind-2.19.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/jakarta.activation-2.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/jakarta.mail-2.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/jgoodies-common-1.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/jgoodies-looks-2.4.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/jl1.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/jsoup-1.21.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/jspecify-1.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/jspecify-1.0.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/junit-4.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/kotlin-stdlib-2.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/ojdbc17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/okhttp-3.14.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/okio-1.17.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/opentelemetry-api-1.51.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/opentelemetry-api-1.51.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/opentelemetry-context-1.51.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/opentelemetry-context-1.51.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/opentelemetry-exporter-logging-1.51.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/opentelemetry-exporter-logging-1.51.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/opentelemetry-sdk-1.51.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/opentelemetry-sdk-1.51.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/opentelemetry-sdk-common-1.51.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/opentelemetry-sdk-common-1.51.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/opentelemetry-sdk-extension-autoconfigure-1.51.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/opentelemetry-sdk-extension-autoconfigure-1.51.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/opentelemetry-sdk-extension-autoconfigure-spi-1.51.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/opentelemetry-sdk-extension-autoconfigure-spi-1.51.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/opentelemetry-sdk-logs-1.51.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/opentelemetry-sdk-logs-1.51.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/opentelemetry-sdk-metrics-1.51.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/opentelemetry-sdk-metrics-1.51.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/opentelemetry-sdk-trace-1.51.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/opentelemetry-sdk-trace-1.51.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-api-4.34.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-api-4.34.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-chrome-driver-4.34.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-chrome-driver-4.34.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-chromium-driver-4.34.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-chromium-driver-4.34.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-devtools-v136-4.34.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-devtools-v136-4.34.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-devtools-v137-4.34.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-devtools-v137-4.34.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-devtools-v138-4.34.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-devtools-v138-4.34.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-edge-driver-4.34.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-edge-driver-4.34.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-firefox-driver-4.34.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-firefox-driver-4.34.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-http-4.34.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-http-4.34.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-ie-driver-4.34.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-ie-driver-4.34.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-java-4.34.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-java-4.34.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-json-4.34.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-json-4.34.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-manager-4.34.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-manager-4.34.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-os-4.34.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-os-4.34.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-remote-driver-4.34.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-remote-driver-4.34.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-safari-driver-4.34.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-safari-driver-4.34.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-support-4.34.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/selenium-support-4.34.0-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

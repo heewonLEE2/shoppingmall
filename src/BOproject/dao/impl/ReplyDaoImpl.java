@@ -19,12 +19,12 @@ public class ReplyDaoImpl implements ReplyDao {
 	private ResultSet rs;
 	
 	public ReplyDaoImpl() {
-		conn = conn = ConnectionUtil.getConnectionUtil().getConnection();
 	}
 	
 	@Override
 	public List<ReplyVO> listReply() throws SQLException {
-		String sql = " select rid, rcontent, user_id, aid, rdate " + " from bo.reply ";
+		conn = ConnectionUtil.getConnectionUtil().getConnection();
+		String sql = " select rid, rcontent, user_id, aid, rdate " + " from reply ";
 		
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
@@ -40,13 +40,15 @@ public class ReplyDaoImpl implements ReplyDao {
 				replyList.add(reply);
 			}
 		}
+		ConnectionUtil.getConnectionUtil().closeAll(rs, pstmt, conn);
 		return replyList;
 	}
 	
 	@Override
 	public ReplyVO getReply(int rid) throws SQLException {
+		conn = ConnectionUtil.getConnectionUtil().getConnection();
 		String sql = " select rid, rcontent, user_id, aid, rdate " 
-				+ " from bo.reply where rid=? ";
+				+ " from reply where rid=? ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, rid);
 		rs = pstmt.executeQuery();
@@ -60,35 +62,44 @@ public class ReplyDaoImpl implements ReplyDao {
 				reply.setRdate(rs.getTimestamp("rdate"));
 			}
 		}
+		ConnectionUtil.getConnectionUtil().closeAll(rs, pstmt, conn);
 		return reply;
-		
 	}
 	
 	@Override
 	public int registReply(ReplyVO reply) throws SQLException {
-		String sql = " insert into bo.reply values(seq_reply.nextval, ?, ?, ?, systimestamp) ";
+		conn = ConnectionUtil.getConnectionUtil().getConnection();
+		String sql = " insert into reply values(seq_reply.nextval, ?, ?, ?, systimestamp) ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1,  reply.getRcontent());
 		pstmt.setString(2,  reply.getUser_id());
 		pstmt.setInt(3, reply.getAid());
-		return pstmt.executeUpdate();
+		int num = pstmt.executeUpdate();
+		ConnectionUtil.getConnectionUtil().closeAll(rs, pstmt, conn);
+		return num;
 	}
 	
 	@Override
 	public int modifyReply(ReplyVO reply) throws SQLException {
-		String sql = " update bo.reply set rcontent=?, rdate=sysdate where rid=? ";
+		conn = ConnectionUtil.getConnectionUtil().getConnection();
+		String sql = " update reply set rcontent=?, rdate=sysdate where rid=? ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1,  reply.getRcontent());
 		pstmt.setInt(2, reply.getRid());
-		return pstmt.executeUpdate();
+		int num = pstmt.executeUpdate();
+		ConnectionUtil.getConnectionUtil().closeAll(rs, pstmt, conn);
+		return num;
 	}
 	
 	@Override
 	public int removeReply(int rid) throws SQLException {
-		String sql = " delete bo.reply where rid=? ";
+		conn = ConnectionUtil.getConnectionUtil().getConnection();
+		String sql = " delete reply where rid=? ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, rid);
-		return pstmt.executeUpdate();
+		int num = pstmt.executeUpdate();
+		ConnectionUtil.getConnectionUtil().closeAll(rs, pstmt, conn);
+		return num;
 	}
 
 }

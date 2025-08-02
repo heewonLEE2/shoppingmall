@@ -12,8 +12,8 @@ public final class ConnectionUtil {
 	
 	private static ConnectionUtil connectionUtil = new ConnectionUtil();
 	private static final String BO_URL = "jdbc:oracle:thin:@localhost:1521:xe";  
-	private static final String USERNAME = "BO";
-	private static final String PASSWORD = "BO";
+	private static final String USERNAME = "JDBC";
+	private static final String PASSWORD = "JDBC";
 
 	private Connection conn;
 

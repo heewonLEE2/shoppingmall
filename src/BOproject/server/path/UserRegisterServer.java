@@ -11,11 +11,10 @@ import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
 import BOproject.model.UserVO;
-import BOproject.server.model.LoginDTO;
 import BOproject.service.UserService;
 import BOproject.service.impl.UserServiceImpl;
 
-public class RegisterServer implements HttpHandler {
+public class UserRegisterServer implements HttpHandler {
 
 	@Override
 	public void handle(HttpExchange exchange) throws IOException {
@@ -49,6 +48,7 @@ public class RegisterServer implements HttpHandler {
 			try {
 				if (userService.getUser(userVO.getUser_id()).getUser_id() != null) {
 					response = "중복된 아이디 입니다.";
+					System.out.println("중복된 아이디입니다.");
 				} else {
 					// 로그인 로직 수정: 사용자가 존재하면 성공
 					if (userService.registUser(userVO) == 0) {
@@ -81,5 +81,4 @@ public class RegisterServer implements HttpHandler {
 		}
 
 	}
-
 }

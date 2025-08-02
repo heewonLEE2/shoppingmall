@@ -20,12 +20,12 @@ public class ProductDaoImpl implements ProductDao{
 	private ResultSet rs;
 	
 	public ProductDaoImpl() {
-		conn = ConnectionUtil.getConnectionUtil().getConnection();
 	}
 	
 	@Override
 	public List<ProductVO> listProduct() throws SQLException {
-		String sql = " SELECT pid, pname, pprice, pcontent, pimgurl, plikecount, cid FROM bo.PRODUCT ";
+		conn = ConnectionUtil.getConnectionUtil().getConnection();
+		String sql = " SELECT pid, pname, pprice, pcontent, pimgurl, plikecount, cid FROM PRODUCT ";
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
 		List<ProductVO> productList = new ArrayList<ProductVO>();
@@ -42,12 +42,14 @@ public class ProductDaoImpl implements ProductDao{
 				productList.add(product);
 			}
 		}
+		ConnectionUtil.getConnectionUtil().closeAll(rs, pstmt, conn);
 		return productList;
 	}
 	
 	@Override
 	public ProductVO getProduct(int pid) throws SQLException {
-		String sql = " SELECT pid, pname, pprice, pcontent, pimgurl, plikecount, cid FROM bo.PRODUCT where pid=?";
+		conn = ConnectionUtil.getConnectionUtil().getConnection();
+		String sql = " SELECT pid, pname, pprice, pcontent, pimgurl, plikecount, cid FROM PRODUCT where pid=?";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, pid);
 		rs = pstmt.executeQuery();
@@ -63,37 +65,44 @@ public class ProductDaoImpl implements ProductDao{
 				product.setCid(rs.getString("cid"));
 			}
 		}
+		ConnectionUtil.getConnectionUtil().closeAll(rs, pstmt, conn);
 		return product;
 	}
 	@Override
 	public int registProduct(ProductVO product) throws SQLException {
-		String sql = " insert into bo.PRODUCT values(SEQ_PRODUCT.NEXTVAL, ?, ?, ?, ?, 0, ?) ";
+		conn = ConnectionUtil.getConnectionUtil().getConnection();
+		String sql = " insert into PRODUCT values(SEQ_PRODUCT.NEXTVAL, ?, ?, ?, ?, 0, ?) ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, product.getPname());
 		pstmt.setInt(2, product.getPprice());
 		pstmt.setString(3, product.getPcontent());
 		pstmt.setString(4, product.getPimgUrl());
 		pstmt.setString(5, product.getCid());
+		ConnectionUtil.getConnectionUtil().closeAll(rs, pstmt, conn);
 		return pstmt.executeUpdate();
 	}
 	
 	@Override
 	public int modifyProduct(ProductVO product) throws SQLException {
-		String sql = " update bo.PRODUCT set pname=?, pprice=?, pcontent=?, PLIKECOUNT=? where pid=? ";
+		conn = ConnectionUtil.getConnectionUtil().getConnection();
+		String sql = " update PRODUCT set pname=?, pprice=?, pcontent=?, PLIKECOUNT=? where pid=? ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, product.getPname());
 		pstmt.setInt(2, product.getPprice());
 		pstmt.setString(3, product.getPcontent());
 		pstmt.setInt(4, product.getPlikeCount());
 		pstmt.setInt(5, product.getPid());
+		ConnectionUtil.getConnectionUtil().closeAll(rs, pstmt, conn);
 		return pstmt.executeUpdate();
 	}
 	
 	@Override
 	public int removeProduct(int pid) throws SQLException {
-		String sql = " delete bo.PRODUCT where pid=? ";
+		conn = ConnectionUtil.getConnectionUtil().getConnection();
+		String sql = " delete PRODUCT where pid=? ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, pid);
+		ConnectionUtil.getConnectionUtil().closeAll(rs, pstmt, conn);
 		return pstmt.executeUpdate();
 	}
 }
