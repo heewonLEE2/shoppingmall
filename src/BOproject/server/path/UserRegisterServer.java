@@ -52,7 +52,7 @@ public class UserRegisterServer implements HttpHandler {
 				} else {
 					// 로그인 로직 수정: 사용자가 존재하면 성공
 					if (userService.registUser(userVO) == 0) {
-						response = "회원가입을 실패하였습니다.";
+						response = "false";
 						System.out.println("회원가입 실패");
 					} else {
 						response = "회원가입을 성공하였습니다.";
