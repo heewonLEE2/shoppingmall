@@ -4,11 +4,13 @@ package BOproject.server.router;
 import java.net.InetSocketAddress;
 
 
+
 import com.sun.net.httpserver.HttpServer;
 
-import BOproject.server.path.ArticleListServer;
+import BOproject.server.path.ArticleDeleteServer;
 import BOproject.server.path.ArticleListServer2;
 import BOproject.server.path.ArticleRegisterServer;
+import BOproject.server.path.ArticleRegisterServer2;
 import BOproject.server.path.LoginCheckServer;
 import BOproject.server.path.ProductListServer;
 import BOproject.server.path.UserRegisterServer;
@@ -25,7 +27,8 @@ public class Router {
 		server.createContext("/register", new UserRegisterServer());
 		server.createContext("/productlist", new ProductListServer());
 		server.createContext("/articlelist", new ArticleListServer2());
-		server.createContext("/articleregist", new ArticleRegisterServer());
+		server.createContext("/articleregist", new ArticleRegisterServer2());
+		server.createContext("/articledelete",new ArticleDeleteServer());
 		
 		server.setExecutor(null);
 		server.start();

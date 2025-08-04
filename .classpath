@@ -90,5 +90,7 @@
 	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-safari-driver-4.34.0-sources.jar"/>
 	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-support-4.34.0.jar"/>
 	<classpathentry kind="lib" path="C:/pub2504/lib/selenium-support-4.34.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/pub2504/lib/commons-fileupload-1.5.jar"/>
+	<classpathentry kind="lib" path="C:/pub2504/lib/commons-io-2.11.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
