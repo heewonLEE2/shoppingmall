@@ -13,25 +13,24 @@ import BOproject.model.OrderVO;
 import BOproject.model.UserVO;
 import BOproject.util.ConnectionUtil;
 
-public class OrderDaoImpl implements OrderDao{
+public class OrderDaoImpl implements OrderDao {
 
 	private Connection conn;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
-	
+
 	public OrderDaoImpl() {
-		conn = ConnectionUtil.getConnectionUtil().getConnection();
 	}
-	
+
 	@Override
 	public List<OrderVO> listOrder() throws SQLException {
-		String sql = " select oid, pid, user_id, oamount, ototal, oaddress, cid, odate "
-				+ " from bo.ORDER_TB ";
+		conn = ConnectionUtil.getConnectionUtil().getConnection();
+		String sql = " select oid, pid, user_id, oamount, ototal, oaddress, cid, odate " + " from bo.ORDER_TB ";
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
 		List<OrderVO> orderList = new ArrayList<OrderVO>();
-		if(rs!=null) {
-			while(rs.next()) {
+		if (rs != null) {
+			while (rs.next()) {
 				OrderVO order = new OrderVO();
 				order.setOid(rs.getInt("oid"));
 				order.setPid(rs.getInt("pid"));
@@ -44,19 +43,21 @@ public class OrderDaoImpl implements OrderDao{
 				orderList.add(order);
 			}
 		}
+		ConnectionUtil.getConnectionUtil().closeAll(rs, pstmt, conn);
 		return orderList;
 	}
-	
+
 	@Override
 	public OrderVO getOrder(int oid) throws SQLException {
+		conn = ConnectionUtil.getConnectionUtil().getConnection();
 		String sql = " select oid, pid, user_id, oamount, ototal, oaddress, cid, odate "
 				+ " from bo.ORDER_TB where oid=? ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, oid);
 		rs = pstmt.executeQuery();
 		OrderVO order = new OrderVO();
-		if(rs!=null) {
-			if(rs.next()) {
+		if (rs != null) {
+			if (rs.next()) {
 				order.setOid(rs.getInt("oid"));
 				order.setPid(rs.getInt("pid"));
 				order.setUser_id(rs.getString("user_id"));
@@ -67,11 +68,13 @@ public class OrderDaoImpl implements OrderDao{
 				order.setOdate(rs.getTimestamp("odate"));
 			}
 		}
+		ConnectionUtil.getConnectionUtil().closeAll(rs, pstmt, conn);
 		return order;
 	}
-	
+
 	@Override
 	public int registOrder(OrderVO order) throws SQLException {
+		conn = ConnectionUtil.getConnectionUtil().getConnection();
 		String sql = " insert into bo.ORDER_TB values(seq_order_tb.nextval, ?, ?, ?, ?, ?, ?, systimestamp) ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, order.getPid());
@@ -80,11 +83,14 @@ public class OrderDaoImpl implements OrderDao{
 		pstmt.setInt(4, order.getOtotal());
 		pstmt.setString(5, order.getOaddress());
 		pstmt.setString(6, order.getCid());
-		return pstmt.executeUpdate();
+		int num = pstmt.executeUpdate();
+		ConnectionUtil.getConnectionUtil().closeAll(rs, pstmt, conn);
+		return num;
 	}
-	
+
 	@Override
 	public int modifyOrder(OrderVO order) throws SQLException {
+		conn = ConnectionUtil.getConnectionUtil().getConnection();
 		String sql = " update bo.ORDER_TB set oamount=?, ototal=?, oaddress=?, cid=?, odate=sysdate where oid=? ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, order.getOamount());
@@ -92,29 +98,20 @@ public class OrderDaoImpl implements OrderDao{
 		pstmt.setString(3, order.getOaddress());
 		pstmt.setString(4, order.getCid());
 		pstmt.setInt(5, order.getOid());
-		return pstmt.executeUpdate();
+		int num = pstmt.executeUpdate();
+		ConnectionUtil.getConnectionUtil().closeAll(rs, pstmt, conn);
+		return num;
 	}
 
 	@Override
 	public int removeOrder(int oid) throws SQLException {
+		conn = ConnectionUtil.getConnectionUtil().getConnection();
 		String sql = " delete bo.ORDER_TB where oid=? ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, oid);
-		return pstmt.executeUpdate();
+		int num = pstmt.executeUpdate();
+		ConnectionUtil.getConnectionUtil().closeAll(rs, pstmt, conn);
+		return num;
 	}
-	
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

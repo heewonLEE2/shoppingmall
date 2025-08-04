@@ -15,7 +15,7 @@ import BOproject.server.model.LoginDTO;
 import BOproject.service.UserService;
 import BOproject.service.impl.UserServiceImpl;
 
-public class RegisterServer implements HttpHandler {
+public class UserRegisterServer implements HttpHandler {
 
 	@Override
 	public void handle(HttpExchange exchange) throws IOException {
