@@ -14,8 +14,8 @@ public class ProductTestMain {
 		ProductService productService = new ProductServiceImpl();
 		
 		try {
-			productService.listProduct().stream().forEach(System.out::println);
-			//System.out.println(productService.getProduct(1).getPimgUrl());
+			//productService.listProduct().stream().forEach(System.out::println);
+			System.out.println(productService.getProduct(25));
 //			productService.registProduct(new ProductVO(0,"쿠로미옷",
 //					59000,
 //					"귀여움을 강조하는 옷",

@@ -41,6 +41,8 @@ public class ReplyServiceImpl implements ReplyService {
 		return replyDao.removeReply(rid);
 	}
 	
-	
-
+	@Override
+	public List<ReplyVO> selectArticleReply(int aid) throws SQLException {
+		return replyDao.selectArticleReply(aid);
+	}
 }

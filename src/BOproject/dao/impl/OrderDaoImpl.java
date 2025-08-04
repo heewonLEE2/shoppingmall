@@ -75,7 +75,7 @@ public class OrderDaoImpl implements OrderDao {
 	@Override
 	public int registOrder(OrderVO order) throws SQLException {
 		conn = ConnectionUtil.getConnectionUtil().getConnection();
-		String sql = " insert into bo.ORDER_TB values(seq_order_tb.nextval, ?, ?, ?, ?, ?, ?, systimestamp) ";
+		String sql = " insert into bo.ORDER_TB values(bo.seq_order_tb.nextval, ?, ?, ?, ?, ?, ?, systimestamp) ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, order.getPid());
 		pstmt.setString(2, order.getUser_id());

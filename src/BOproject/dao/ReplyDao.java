@@ -17,5 +17,7 @@ public interface ReplyDao {
 	public abstract int modifyReply(ReplyVO Reply) throws SQLException;
 	
 	public abstract int removeReply(int rid) throws SQLException;
+	
+	public abstract List<ReplyVO> selectArticleReply(int aid) throws SQLException;
 
 }

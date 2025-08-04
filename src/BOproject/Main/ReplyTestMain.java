@@ -15,10 +15,11 @@ public class ReplyTestMain {
 			
 			ReplyService replyService = new ReplyServiceImpl();
 			
-			replyService.listReply().stream().forEach(System.out::println);
-			//replyService.registReply(new ReplyVO(0, "첫 댓글입니다.", "gmldnjs1616@hanmail.net", 3,null));
-			//System.out.println(replyService.getReply(1));
+			//replyService.listReply().stream().forEach(System.out::println);
+			//replyService.registReply(new ReplyVO(0, "gmldnjs1616@hanmail.net", 23,null,"자바에서 첫 댓글입니다."));
+			//System.out.println(replyService.getReply(23));
 			//replyService.modifyReply(null);
+			replyService.selectArticleReply(23).stream().forEach(System.out::println);
 			
 		} catch(SQLException sqle) {
 			sqle.printStackTrace();

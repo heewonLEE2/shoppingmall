@@ -8,20 +8,20 @@ public class ReplyVO implements Serializable{
 	private static final long serialVersionUID = 124588484238L;
 	
 	private int rid;
-	private String rcontent;
 	private String user_id;
 	private int aid;
 	private Timestamp rdate;
+	private String rcontent;
 	
 	public ReplyVO() {
 	}
 
-	public ReplyVO(int rid, String rcontent, String user_id, int aid, Timestamp rdate) {
+	public ReplyVO(int rid, String user_id, int aid, Timestamp rdate, String rcontent) {
 		this.rid = rid;
-		this.rcontent = rcontent;
 		this.user_id = user_id;
 		this.aid = aid;
 		this.rdate = rdate;
+		this.rcontent = rcontent;
 	}
 
 	public int getRid() {
