@@ -19,4 +19,6 @@ public interface ReplyService {
 	
 	public abstract int removeReply(int rid) throws SQLException;
 
+	public abstract List<ReplyVO> selectArticleReply(int aid) throws SQLException;
+	
 }

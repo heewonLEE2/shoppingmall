@@ -25,7 +25,7 @@ public class ArticleDaoimpl implements ArticleDao {
 	@Override
 	public List<ArticleVO> listArticle() throws SQLException {
 		conn = ConnectionUtil.getConnectionUtil().getConnection();
-		String sql = " SELECT aid, user_id, atitle, acontent, alikecount, aimgfile, cid, adate FROM bo.ARTICLE ";
+		String sql = " SELECT aid, user_id, atitle, acontent, alikecount, cid, adate, aimgfile FROM bo.ARTICLE ";
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
 		List<ArticleVO> articleList = new ArrayList<ArticleVO>();
@@ -37,9 +37,9 @@ public class ArticleDaoimpl implements ArticleDao {
 				article.setAtitle(rs.getString("atitle"));
 				article.setAcontent(rs.getString("acontent"));
 				article.setAlikeCount(rs.getInt("alikecount"));
-				article.setAimgFile(rs.getBytes("aimgfile"));
 				article.setCid(rs.getString("cid"));
 				article.setAdate(rs.getTimestamp("adate"));
+				article.setAimgfile(rs.getString("aimgfile"));
 				articleList.add(article);
 			}
 		}
@@ -50,7 +50,7 @@ public class ArticleDaoimpl implements ArticleDao {
 	@Override
 	public ArticleVO getArticle(int aid) throws SQLException {
 		conn = ConnectionUtil.getConnectionUtil().getConnection();
-		String sql = " SELECT aid, user_id, atitle, acontent, alikecount, aimgfile, cid, adate FROM bo.ARTICLE where aid=? ";
+		String sql = " SELECT aid, user_id, atitle, acontent, alikecount, cid, adate, aimgfile FROM bo.ARTICLE where aid=? ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, aid);
 		rs = pstmt.executeQuery();
@@ -62,9 +62,9 @@ public class ArticleDaoimpl implements ArticleDao {
 				article.setAtitle(rs.getString("atitle"));
 				article.setAcontent(rs.getString("acontent"));
 				article.setAlikeCount(rs.getInt("alikecount"));
-				article.setAimgFile(rs.getBytes("aimgfile"));
 				article.setCid(rs.getString("cid"));
 				article.setAdate(rs.getTimestamp("adate"));
+				article.setAimgfile(rs.getString("aimgfile"));
 			}
 		}
 		ConnectionUtil.getConnectionUtil().closeAll(rs, pstmt, conn);
@@ -74,12 +74,13 @@ public class ArticleDaoimpl implements ArticleDao {
 	@Override
 	public int registArticle(ArticleVO article) throws SQLException {
 		conn = ConnectionUtil.getConnectionUtil().getConnection();
-		String sql = " insert into bo.article values(seq_article.nextval, ?, ?, ?, 0, Empty_blob(), ?, sysdate) ";
+		String sql = " insert into bo.article values(bo.seq_article.nextval, ?, ?, ?, 0, ?, sysdate, ?) ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, article.getUser_id());
 		pstmt.setString(2, article.getAtitle());
 		pstmt.setString(3, article.getAcontent());
 		pstmt.setString(4, article.getCid());
+		pstmt.setString(5, article.getAimgfile());
 		int num = pstmt.executeUpdate();
 		ConnectionUtil.getConnectionUtil().closeAll(rs, pstmt, conn);
 		return num;

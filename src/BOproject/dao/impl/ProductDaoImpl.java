@@ -72,7 +72,7 @@ public class ProductDaoImpl implements ProductDao {
 	@Override
 	public int registProduct(ProductVO product) throws SQLException {
 		conn = ConnectionUtil.getConnectionUtil().getConnection();
-		String sql = " insert into bo.PRODUCT values(SEQ_PRODUCT.NEXTVAL, ?, ?, ?, ?, 0, ?) ";
+		String sql = " insert into bo.PRODUCT values(bo.SEQ_PRODUCT.NEXTVAL, ?, ?, ?, ?, 0, ?) ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, product.getPname());
 		pstmt.setInt(2, product.getPprice());

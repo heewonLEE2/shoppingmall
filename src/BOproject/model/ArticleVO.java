@@ -12,23 +12,23 @@ public class ArticleVO {
 	private String atitle;
 	private String acontent;
 	private int alikeCount;
-	private byte[] aimgFile;
 	private String cid;
 	private Timestamp adate;
+	private String aimgfile;
 	
 	public ArticleVO() {
 	}
 
-	public ArticleVO(int aid, String user_id, String atitle, String acontent, int alikeCount, byte[] aimgFile,
-			String cid, Timestamp adate) {
+	public ArticleVO(int aid, String user_id, String atitle, String acontent, int alikeCount, String cid,
+			Timestamp adate, String aimgfile) {
 		this.aid = aid;
 		this.user_id = user_id;
 		this.atitle = atitle;
 		this.acontent = acontent;
 		this.alikeCount = alikeCount;
-		this.aimgFile = aimgFile;
 		this.cid = cid;
 		this.adate = adate;
+		this.aimgfile = aimgfile;
 	}
 
 	public int getAid() {
@@ -71,14 +71,6 @@ public class ArticleVO {
 		this.alikeCount = alikeCount;
 	}
 
-	public byte[] getAimgFile() {
-		return aimgFile;
-	}
-
-	public void setAimgFile(byte[] aimgFile) {
-		this.aimgFile = aimgFile;
-	}
-
 	public String getCid() {
 		return cid;
 	}
@@ -95,11 +87,18 @@ public class ArticleVO {
 		this.adate = adate;
 	}
 
+	public String getAimgfile() {
+		return aimgfile;
+	}
+
+	public void setAimgfile(String aimgfile) {
+		this.aimgfile = aimgfile;
+	}
+
 	@Override
 	public String toString() {
 		return "ArticleVO [aid=" + aid + ", user_id=" + user_id + ", atitle=" + atitle + ", acontent=" + acontent
-				+ ", alikeCount=" + alikeCount + ", aimgFile=" + Arrays.toString(aimgFile) + ", cid=" + cid + ", adate="
-				+ adate + "]";
+				+ ", alikeCount=" + alikeCount + ", cid=" + cid + ", adate=" + adate + ", aimgfile=" + aimgfile + "]";
 	}
 
 	

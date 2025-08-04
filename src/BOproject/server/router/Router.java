@@ -7,6 +7,7 @@ import java.net.InetSocketAddress;
 import com.sun.net.httpserver.HttpServer;
 
 import BOproject.server.path.ArticleListServer;
+import BOproject.server.path.ArticleListServer2;
 import BOproject.server.path.ArticleRegisterServer;
 import BOproject.server.path.LoginCheckServer;
 import BOproject.server.path.ProductListServer;
@@ -23,7 +24,7 @@ public class Router {
 		server.createContext("/logincheck", new LoginCheckServer());
 		server.createContext("/register", new UserRegisterServer());
 		server.createContext("/productlist", new ProductListServer());
-		server.createContext("/articlelist", new ArticleListServer());
+		server.createContext("/articlelist", new ArticleListServer2());
 		server.createContext("/articleregist", new ArticleRegisterServer());
 		
 		server.setExecutor(null);

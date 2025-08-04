@@ -67,7 +67,7 @@ public class AiContentDaoImpl implements AiContentDao {
 	@Override
 	public int registAiContent(AiContentVO aiContent) throws SQLException {
 		conn = ConnectionUtil.getConnectionUtil().getConnection();
-		String sql = " insert into bo.aicontent values(seq_aicontent.nextval, ?, ?, ?, sysdate) ";
+		String sql = " insert into bo.aicontent values(bo.seq_aicontent.nextval, ?, ?, ?, sysdate) ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, aiContent.getAiCon_user_Id());
 		pstmt.setString(2, aiContent.getAiContent());

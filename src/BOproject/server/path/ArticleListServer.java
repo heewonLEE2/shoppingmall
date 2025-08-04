@@ -31,7 +31,8 @@ public class ArticleListServer implements HttpHandler {
 		Map<String, Object> responseMap = new HashMap<>();
 		ArticleService articleService = new ArticleServiceImpl();
 		UserService userService = new UserServiceImpl();
-
+		
+		
 		try {
 			// 응답 형식을 "article" : [listArticle], "users" : [listUser] 형식으로 하기위해
 			// users 데이터도 필요하기 때문
