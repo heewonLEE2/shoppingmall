@@ -41,5 +41,8 @@ public class OrderServiceImpl implements OrderService{
 	public int removeOrder(int oid) throws SQLException {
 		return orderDao.removeOrder(oid);
 	}
-	
+	@Override
+	public List<OrderVO> userListOrder(String userId) throws SQLException {
+		return orderDao.userListOrder(userId);
+	}
 }

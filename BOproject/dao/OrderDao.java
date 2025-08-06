@@ -18,6 +18,8 @@ public interface OrderDao {
 	
 	public abstract int removeOrder(int oid) throws SQLException;
 	
+	public abstract List<OrderVO> userListOrder(String userId) throws SQLException;
+	
 }
 
 

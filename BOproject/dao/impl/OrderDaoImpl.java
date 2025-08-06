@@ -114,4 +114,30 @@ public class OrderDaoImpl implements OrderDao {
 		return num;
 	}
 
+	@Override
+	public List<OrderVO> userListOrder(String userId) throws SQLException {
+		conn = ConnectionUtil.getConnectionUtil().getConnection();
+		String sql = " select oid, pid, user_id, oamount, ototal, oaddress, cid, odate " + " from bo.ORDER_TB where user_id=? ";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, userId);
+		rs = pstmt.executeQuery();
+		List<OrderVO> orderList = new ArrayList<OrderVO>();
+		if (rs != null) {
+			while (rs.next()) {
+				OrderVO order = new OrderVO();
+				order.setOid(rs.getInt("oid"));
+				order.setPid(rs.getInt("pid"));
+				order.setUser_id(rs.getString("user_id"));
+				order.setOamount(rs.getInt("oamount"));
+				order.setOtotal(rs.getInt("ototal"));
+				order.setOaddress(rs.getString("oaddress"));
+				order.setCid(rs.getString("cid"));
+				order.setOdate(rs.getTimestamp("odate"));
+				orderList.add(order);
+			}
+		}
+		ConnectionUtil.getConnectionUtil().closeAll(rs, pstmt, conn);
+		return orderList;
+	}
+	
 }

@@ -1,28 +1,25 @@
 package BOproject.server.router;
 
-
 import java.net.InetSocketAddress;
-
-
-
-
-
 import com.sun.net.httpserver.HttpServer;
 
-import BOproject.server.path.AiRecomendServer;
-
-
-import BOproject.server.path.AiRecommendServer;
-import BOproject.server.path.AiRecsysServer;
-import BOproject.server.path.ArticleDeleteServer;
-import BOproject.server.path.ArticleLikeCountServer;
-import BOproject.server.path.ArticleListServer2;
-import BOproject.server.path.ArticleRegisterServer;
-import BOproject.server.path.LoginCheckServer;
-import BOproject.server.path.ProductListServer;
-import BOproject.server.path.ProductOneServer;
-import BOproject.server.path.ReplyRegisterServer;
-import BOproject.server.path.UserRegisterServer;
+import BOproject.server.path.ai.AiContentListServer;
+import BOproject.server.path.ai.AiContentRegister;
+import BOproject.server.path.ai.AiRecommendServer;
+import BOproject.server.path.ai.AiRecsysServer;
+import BOproject.server.path.ai.AicontentDeleteServer;
+import BOproject.server.path.article.ArticleDeleteServer;
+import BOproject.server.path.article.ArticleLikeCountServer;
+import BOproject.server.path.article.ArticleListServer2;
+import BOproject.server.path.article.ArticleRegisterServer;
+import BOproject.server.path.article.ReplyRegisterServer;
+import BOproject.server.path.product.ProductLikeCountServer;
+import BOproject.server.path.product.ProductListServer;
+import BOproject.server.path.product.ProductOneServer;
+import BOproject.server.path.product.ProductOrderBuyServer;
+import BOproject.server.path.product.ProductOrderDeleteServer;
+import BOproject.server.path.user.UserLoginCheckServer;
+import BOproject.server.path.user.UserRegisterServer;
 
 public class Router {
 
@@ -33,18 +30,23 @@ public class Router {
 	private void serverRun() throws Exception{
 		
 		HttpServer server = HttpServer.create(new InetSocketAddress(8888), 0);
-		server.createContext("/logincheck", new LoginCheckServer());
+		server.createContext("/logincheck", new UserLoginCheckServer());
 		server.createContext("/register", new UserRegisterServer());
 		server.createContext("/productlist", new ProductListServer());
 		server.createContext("/product", new ProductOneServer());      // 단일 상품
+		server.createContext("/productlikecount", new ProductLikeCountServer());
 		server.createContext("/articlelist", new ArticleListServer2());
 		server.createContext("/articleregist", new ArticleRegisterServer());
 		server.createContext("/articledelete",new ArticleDeleteServer());
 		server.createContext("/articlelikecount", new ArticleLikeCountServer());
-		server.createContext("/airecomend", new AiRecomendServer());
 		server.createContext("/airecommend", new AiRecommendServer());
 		server.createContext("/airecsys", new AiRecsysServer());
+		server.createContext("/aicontentregist", new AiContentRegister());
+		server.createContext("/aicontentlist", new AiContentListServer());
+		server.createContext("/aicontentdelete", new AicontentDeleteServer());
 		server.createContext("/replylist", new ReplyRegisterServer());
+		server.createContext("/orderbuy", new ProductOrderBuyServer());
+		server.createContext("/orderdelete", new ProductOrderDeleteServer());
 
 		
 		server.setExecutor(null);

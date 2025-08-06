@@ -2,7 +2,6 @@ package BOproject.dao.impl;
 
 import java.sql.Connection;
 
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -25,7 +24,7 @@ public class AiContentDaoImpl implements AiContentDao {
 	@Override
 	public List<AiContentVO> listAiContent() throws SQLException {
 		conn = ConnectionUtil.getConnectionUtil().getConnection();
-		String sql = " select aicon_id, aicon_user_id, aicontent, aicontenturl, aicontentdate from bo.aicontent ";
+		String sql = " select aicon_id, aicon_user_id, aicontent, aicontenturl, aicontentdate, cid from bo.aicontent ";
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
 		List<AiContentVO> aiContentList = new ArrayList<AiContentVO>();
@@ -37,6 +36,7 @@ public class AiContentDaoImpl implements AiContentDao {
 				aiContent.setAiContent(rs.getString("aicontent"));
 				aiContent.setAiContentUrl(rs.getString("aicontenturl"));
 				aiContent.setAiContentDate(rs.getTimestamp("aicontentdate"));
+				aiContent.setCid(rs.getString("cid"));
 				aiContentList.add(aiContent);
 			}
 		}
@@ -47,7 +47,7 @@ public class AiContentDaoImpl implements AiContentDao {
 	@Override
 	public AiContentVO getAiContent(int aiCon_Id) throws SQLException {
 		conn = ConnectionUtil.getConnectionUtil().getConnection();
-		String sql = " select aicon_id, aicon_user_id, aicontent, aicontenturl, aicontentdate from bo.aicontent where aicon_id=? ";
+		String sql = " select aicon_id, aicon_user_id, aicontent, aicontenturl, aicontentdate, cid from bo.aicontent where aicon_id=? ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, aiCon_Id);
 		rs = pstmt.executeQuery();
@@ -59,6 +59,7 @@ public class AiContentDaoImpl implements AiContentDao {
 				aiContent.setAiContent(rs.getString("aicontent"));
 				aiContent.setAiContentUrl(rs.getString("aicontenturl"));
 				aiContent.setAiContentDate(rs.getTimestamp("aicontentdate"));
+				aiContent.setCid(rs.getString("cid"));
 			}
 		}
 		ConnectionUtil.getConnectionUtil().closeAll(rs, pstmt, conn);
@@ -68,11 +69,12 @@ public class AiContentDaoImpl implements AiContentDao {
 	@Override
 	public int registAiContent(AiContentVO aiContent) throws SQLException {
 		conn = ConnectionUtil.getConnectionUtil().getConnection();
-		String sql = " insert into bo.aicontent values(bo.seq_aicontent.nextval, ?, ?, ?, sysdate) ";
+		String sql = " insert into bo.aicontent values(bo.seq_aicontent.nextval, ?, ?, sysdate, ? , ?) ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, aiContent.getAiCon_user_Id());
-		pstmt.setString(2, aiContent.getAiContent());
-		pstmt.setString(3, aiContent.getAiContentUrl());
+		pstmt.setString(2, aiContent.getAiContentUrl());
+		pstmt.setString(3, aiContent.getAiContent());
+		pstmt.setString(4, aiContent.getCid());
 		int num = pstmt.executeUpdate();
 		ConnectionUtil.getConnectionUtil().closeAll(rs, pstmt, conn);
 		return num;

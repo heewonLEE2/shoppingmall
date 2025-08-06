@@ -12,17 +12,19 @@ public class AiContentVO implements Serializable{
 	private String aiContent;
 	private String aiContentUrl;
 	private Timestamp aiContentDate;
+	private String cid;
 	
 	public AiContentVO() {
 	}
 
 	public AiContentVO(int aiCon_Id, String aiCon_user_Id, String aiContent, String aiContentUrl,
-			Timestamp aiContentDate) {
+			Timestamp aiContentDate, String cid) {
 		this.aiCon_Id = aiCon_Id;
 		this.aiCon_user_Id = aiCon_user_Id;
 		this.aiContent = aiContent;
 		this.aiContentUrl = aiContentUrl;
 		this.aiContentDate = aiContentDate;
+		this.cid = cid;
 	}
 
 	public int getAiCon_Id() {
@@ -65,10 +67,18 @@ public class AiContentVO implements Serializable{
 		this.aiContentDate = aiContentDate;
 	}
 
+	public String getCid() {
+		return cid;
+	}
+
+	public void setCid(String cid) {
+		this.cid = cid;
+	}
+
 	@Override
 	public String toString() {
 		return "AiContentVO [aiCon_Id=" + aiCon_Id + ", aiCon_user_Id=" + aiCon_user_Id + ", aiContent=" + aiContent
-				+ ", aiContentUrl=" + aiContentUrl + ", aiContentDate=" + aiContentDate + "]";
+				+ ", aiContentUrl=" + aiContentUrl + ", aiContentDate=" + aiContentDate + ", cid=" + cid + "]";
 	}
 	
 }

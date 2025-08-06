@@ -1,6 +1,7 @@
 package BOproject.model;
 
 import java.sql.Timestamp;
+import java.util.Arrays;
 
 public class ArticleVO {
 
