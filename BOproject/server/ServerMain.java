@@ -9,7 +9,7 @@ public class ServerMain {
 		try {
 
 			Router router = new Router();
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

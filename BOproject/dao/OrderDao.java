@@ -9,30 +9,15 @@ import BOproject.model.UserVO;
 public interface OrderDao {
 
 	public abstract List<OrderVO> listOrder() throws SQLException;
-	
+
 	public abstract OrderVO getOrder(int oid) throws SQLException;
-	
+
 	public abstract int registOrder(OrderVO order) throws SQLException;
-	
+
 	public abstract int modifyOrder(OrderVO order) throws SQLException;
-	
+
 	public abstract int removeOrder(int oid) throws SQLException;
-	
+
 	public abstract List<OrderVO> userListOrder(String userId) throws SQLException;
-	
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

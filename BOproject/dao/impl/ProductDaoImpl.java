@@ -2,7 +2,6 @@ package BOproject.dao.impl;
 
 import java.sql.Connection;
 
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -110,7 +109,7 @@ public class ProductDaoImpl implements ProductDao {
 		ConnectionUtil.getConnectionUtil().closeAll(rs, pstmt, conn);
 		return num;
 	}
-	
+
 	@Override
 	public List<ProductVO> betweenListProduct(String cid, int price1, int price2) throws SQLException {
 		conn = ConnectionUtil.getConnectionUtil().getConnection();
@@ -162,7 +161,7 @@ public class ProductDaoImpl implements ProductDao {
 		ConnectionUtil.getConnectionUtil().closeAll(rs, pstmt, conn);
 		return productList;
 	}
-	
+
 	@Override
 	public List<ProductVO> ListProductHighPrice(String cid) throws SQLException {
 		conn = ConnectionUtil.getConnectionUtil().getConnection();
@@ -187,19 +186,5 @@ public class ProductDaoImpl implements ProductDao {
 		ConnectionUtil.getConnectionUtil().closeAll(rs, pstmt, conn);
 		return productList;
 	}
-	
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

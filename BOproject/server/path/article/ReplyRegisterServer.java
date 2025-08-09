@@ -23,17 +23,15 @@ import BOproject.service.UserService;
 import BOproject.service.impl.ArticleServiceImpl;
 import BOproject.service.impl.ReplyServiceImpl;
 import BOproject.service.impl.UserServiceImpl;
+import BOproject.util.CorsHeaderUtil;
 
 public class ReplyRegisterServer implements HttpHandler {
 
 	@Override
 	public void handle(HttpExchange exchange) {
 		try {
-			// CORS 헤더
-			exchange.getResponseHeaders().set("Access-Control-Allow-Origin", "*");
-			exchange.getResponseHeaders().set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-			exchange.getResponseHeaders().set("Access-Control-Allow-Headers", "Content-Type");
-			exchange.getResponseHeaders().set("Content-Type", "application/json; charset=UTF-8");
+			// CORS 헤더는 모든 응답에 공통으로 설정
+			CorsHeaderUtil.getResponseHeaders(exchange);
 
 			// OPTIONS 요청은 응답만 보내고 종료
 			if ("OPTIONS".equalsIgnoreCase(exchange.getRequestMethod())) {

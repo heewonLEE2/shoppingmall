@@ -3,16 +3,16 @@ package BOproject.model;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
-public class ReplyVO implements Serializable{
+public class ReplyVO implements Serializable {
 
 	private static final long serialVersionUID = 124588484238L;
-	
+
 	private int rid;
 	private String user_id;
 	private int aid;
 	private Timestamp rdate;
 	private String rcontent;
-	
+
 	public ReplyVO() {
 	}
 
@@ -70,6 +70,4 @@ public class ReplyVO implements Serializable{
 				+ rdate + "]";
 	}
 
-	
-	
 }

@@ -4,7 +4,7 @@ public class JsonDataVO {
 
 	private String message;
 	private String data;
-	
+
 	public JsonDataVO() {
 	}
 

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path=""/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk-17.0.15.6-hotspot"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk-17.0.15.6-hotspot">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/jbcrypt-0.4.jar"/>
 	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/commons-fileupload-1.6.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/commons-fileupload2-javax-2.0.0-M4.jar"/>
@@ -96,5 +100,12 @@
 	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/jackson-core-2.19.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/jackson-databind-2.19.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/gson-2.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/joda-time-2.8.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/httpcore-4.4.15.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/httpclient-4.5.13.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/aws-java-sdk-core-1.12.788.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/aws-java-sdk-s3-1.12.788 (1).jar"/>
+	<classpathentry kind="lib" path="C:/Users/gmldn/OneDrive/문서/카카오톡 받은 파일/lib (1)/lib/s3-2.32.15.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

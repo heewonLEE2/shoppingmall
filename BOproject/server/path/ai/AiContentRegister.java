@@ -21,16 +21,14 @@ import BOproject.service.UserService;
 import BOproject.service.impl.AiContentServiceImpl;
 import BOproject.service.impl.ProductServiceImpl;
 import BOproject.service.impl.UserServiceImpl;
+import BOproject.util.CorsHeaderUtil;
 
 public class AiContentRegister implements HttpHandler {
 
 	@Override
 	public void handle(HttpExchange exchange) throws IOException {
 		// CORS 헤더는 모든 응답에 공통으로 설정
-		exchange.getResponseHeaders().set("Access-Control-Allow-Origin", "*");
-		exchange.getResponseHeaders().set("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
-		exchange.getResponseHeaders().set("Access-Control-Allow-Headers", "Content-Type");
-		exchange.getResponseHeaders().set("Content-Type", "application/json; charset=UTF-8");
+		CorsHeaderUtil.getResponseHeaders(exchange);
 
 		// CORS Preflight 요청 처리 (Axios는 POST 전에 OPTIONS 요청을 먼저 보냄)
 		if ("OPTIONS".equalsIgnoreCase(exchange.getRequestMethod())) {
@@ -45,13 +43,12 @@ public class AiContentRegister implements HttpHandler {
 			UserService userService = new UserServiceImpl();
 			ProductService productService = new ProductServiceImpl();
 			AiContentService aiContentService = new AiContentServiceImpl();
-			
+
 			// 요청 본문 읽기
 			InputStreamReader isr = new InputStreamReader(exchange.getRequestBody(), StandardCharsets.UTF_8);
 			BufferedReader br = new BufferedReader(isr);
 			String requestData = br.readLine();
 			AiContentDTO aiContentDTO = gson.fromJson(requestData, AiContentDTO.class);
-			
 
 			try {
 				// 유저 등록 정보 확인
@@ -60,16 +57,9 @@ public class AiContentRegister implements HttpHandler {
 				} else {
 					ProductVO selectProduct = productService.getProduct(Integer.parseInt(aiContentDTO.getProductId()));
 					// aicontent 데이터베이스에 저장
-					aiContentService.registAiContent(
-							new AiContentVO(
-									0,
-									aiContentDTO.getUserId(),
-									aiContentDTO.getAiComment(),
-									selectProduct.getPimgUrl(),
-									null,
-									selectProduct.getCid().substring(0,7)
-									)
-							);
+					aiContentService
+							.registAiContent(new AiContentVO(0, aiContentDTO.getUserId(), aiContentDTO.getAiComment(),
+									selectProduct.getPimgUrl(), null, selectProduct.getCid().substring(0, 7)));
 					response = "게시물 등록되었습니다.";
 				}
 

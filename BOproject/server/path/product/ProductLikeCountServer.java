@@ -13,6 +13,7 @@ import com.sun.net.httpserver.HttpHandler;
 import BOproject.model.ProductVO;
 import BOproject.service.ProductService;
 import BOproject.service.impl.ProductServiceImpl;
+import BOproject.util.CorsHeaderUtil;
 
 public class ProductLikeCountServer implements HttpHandler{
 
@@ -23,9 +24,8 @@ public class ProductLikeCountServer implements HttpHandler{
        String path = exchange.getRequestURI().getPath(); // 전체 경로 예: "/articlelist/21"
           String[] pathParts = path.split("/");
 
-          // pathParts[0]는 빈 문자열 ("/"로 시작하기 때문)
-          // pathParts[1]는 "articlelist"
-          // pathParts[2]는 게시물 ID("21")가 될 것
+          // CORS 헤더는 모든 응답에 공통으로 설정
+          CorsHeaderUtil.getResponseHeaders(exchange);
           
           String productId = null;
           if (pathParts.length > 2) {
@@ -59,11 +59,7 @@ public class ProductLikeCountServer implements HttpHandler{
          response = "서버의 요청입니다.";
 
 
-         // CORS 헤더는 모든 응답에 공통으로 설정
-         exchange.getResponseHeaders().set("Access-Control-Allow-Origin", "*");
-         exchange.getResponseHeaders().set("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
-         exchange.getResponseHeaders().set("Access-Control-Allow-Headers", "Content-Type");
-         exchange.getResponseHeaders().set("Content-Type", "application/json; charset=UTF-8");
+
          exchange.sendResponseHeaders(200, response.getBytes(StandardCharsets.UTF_8).length);
          try (OutputStream os = exchange.getResponseBody()) {
             os.write(response.getBytes(StandardCharsets.UTF_8));

@@ -3,11 +3,11 @@ package BOproject.model;
 public class CategoryVO {
 
 	private static final long serialVersionUID = 12336363928L;
-	
+
 	private int cid;
 	private String ctype;
 	private String cname;
-	
+
 	public CategoryVO() {
 	}
 

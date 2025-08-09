@@ -117,7 +117,8 @@ public class OrderDaoImpl implements OrderDao {
 	@Override
 	public List<OrderVO> userListOrder(String userId) throws SQLException {
 		conn = ConnectionUtil.getConnectionUtil().getConnection();
-		String sql = " select oid, pid, user_id, oamount, ototal, oaddress, cid, odate " + " from bo.ORDER_TB where user_id=? ";
+		String sql = " select oid, pid, user_id, oamount, ototal, oaddress, cid, odate "
+				+ " from bo.ORDER_TB where user_id=? ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, userId);
 		rs = pstmt.executeQuery();
@@ -139,5 +140,5 @@ public class OrderDaoImpl implements OrderDao {
 		ConnectionUtil.getConnectionUtil().closeAll(rs, pstmt, conn);
 		return orderList;
 	}
-	
+
 }

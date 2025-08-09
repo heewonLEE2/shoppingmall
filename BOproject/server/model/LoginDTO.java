@@ -2,10 +2,10 @@ package BOproject.server.model;
 
 import java.io.Serializable;
 
-public class LoginDTO implements Serializable{
+public class LoginDTO implements Serializable {
 
 	private static final long serialVersionUID = 1232533528L;
-	
+
 	private String user_id;
 	private String user_pass;
 
@@ -37,6 +37,5 @@ public class LoginDTO implements Serializable{
 	public String toString() {
 		return "LoginVO [user_id=" + user_id + ", user_pass=" + user_pass + "]";
 	}
-	
-	
+
 }

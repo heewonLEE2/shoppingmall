@@ -3,17 +3,17 @@ package BOproject.model;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
-public class AiContentVO implements Serializable{
+public class AiContentVO implements Serializable {
 
 	private static final long serialVersionUID = 12354426268L;
-	
+
 	private int aiCon_Id;
 	private String aiCon_user_Id;
 	private String aiContent;
 	private String aiContentUrl;
 	private Timestamp aiContentDate;
 	private String cid;
-	
+
 	public AiContentVO() {
 	}
 
@@ -80,5 +80,5 @@ public class AiContentVO implements Serializable{
 		return "AiContentVO [aiCon_Id=" + aiCon_Id + ", aiCon_user_Id=" + aiCon_user_Id + ", aiContent=" + aiContent
 				+ ", aiContentUrl=" + aiContentUrl + ", aiContentDate=" + aiContentDate + ", cid=" + cid + "]";
 	}
-	
+
 }

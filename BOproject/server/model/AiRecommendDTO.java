@@ -2,16 +2,16 @@ package BOproject.server.model;
 
 import java.io.Serializable;
 
-public class AiRecommendDTO implements Serializable{
+public class AiRecommendDTO implements Serializable {
 
 	private static final long serialVersionUID = 221333528L;
-	
+
 	private String cid;
 	private String budget;
 	private String age;
 	private String weight;
 	private String height;
-	
+
 	public AiRecommendDTO() {
 	}
 
@@ -68,5 +68,5 @@ public class AiRecommendDTO implements Serializable{
 		return "AiRecommendDTO [cid=" + cid + ", budget=" + budget + ", age=" + age + ", weight=" + weight + ", height="
 				+ height + "]";
 	}
-	
+
 }

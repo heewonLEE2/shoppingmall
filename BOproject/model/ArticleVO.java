@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class ArticleVO {
 
 	private static final long serialVersionUID = 12336632238L;
-	
+
 	private int aid;
 	private String user_id;
 	private String atitle;
@@ -15,7 +15,7 @@ public class ArticleVO {
 	private String cid;
 	private Timestamp adate;
 	private String aimgfile;
-	
+
 	public ArticleVO() {
 	}
 
@@ -101,5 +101,4 @@ public class ArticleVO {
 				+ ", alikeCount=" + alikeCount + ", cid=" + cid + ", adate=" + adate + ", aimgfile=" + aimgfile + "]";
 	}
 
-	
 }

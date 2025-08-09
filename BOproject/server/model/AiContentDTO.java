@@ -2,14 +2,14 @@ package BOproject.server.model;
 
 import java.io.Serializable;
 
-public class AiContentDTO implements Serializable{
+public class AiContentDTO implements Serializable {
 
 	private static final long serialVersionUID = 221333528L;
-	
+
 	private String userId;
 	private String productId;
 	private String aiComment;
-	
+
 	public AiContentDTO() {
 	}
 
@@ -47,5 +47,5 @@ public class AiContentDTO implements Serializable{
 	public String toString() {
 		return "AiContentDTO [userId=" + userId + ", productId=" + productId + ", aiComment=" + aiComment + "]";
 	}
-	
+
 }

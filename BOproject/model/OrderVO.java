@@ -3,10 +3,10 @@ package BOproject.model;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
-public class OrderVO implements Serializable{
+public class OrderVO implements Serializable {
 
 	private static final long serialVersionUID = 1232533528L;
-	
+
 	private int oid;
 	private int pid;
 	private String user_id;
@@ -15,7 +15,7 @@ public class OrderVO implements Serializable{
 	private String oaddress;
 	private String cid;
 	private Timestamp odate;
-	
+
 	public OrderVO() {
 	}
 
@@ -101,6 +101,4 @@ public class OrderVO implements Serializable{
 				+ ototal + ", oaddress=" + oaddress + ", cid=" + cid + ", odate=" + odate + "]";
 	}
 
-	
-	
 }

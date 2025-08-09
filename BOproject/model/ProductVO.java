@@ -2,10 +2,10 @@ package BOproject.model;
 
 import java.io.Serializable;
 
-public class ProductVO implements Serializable{
+public class ProductVO implements Serializable {
 
 	private static final long serialVersionUID = 12354423928L;
-	
+
 	private int pid;
 	private String pname;
 	private int pprice;
@@ -13,7 +13,7 @@ public class ProductVO implements Serializable{
 	private String pimgUrl;
 	private int plikeCount;
 	private String cid;
-	
+
 	public ProductVO() {
 	}
 
@@ -88,5 +88,5 @@ public class ProductVO implements Serializable{
 		return "ProductVO [pid=" + pid + ", pname=" + pname + ", pprice=" + pprice + ", pcontent=" + pcontent
 				+ ", pimgUrl=" + pimgUrl + ", plikeCount=" + plikeCount + ", cid=" + cid + "]";
 	}
-	
+
 }

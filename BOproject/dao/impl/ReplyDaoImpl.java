@@ -122,13 +122,5 @@ public class ReplyDaoImpl implements ReplyDao {
 		ConnectionUtil.getConnectionUtil().closeAll(rs, pstmt, conn);
 		return replyList;
 	}
-	
-	
+
 } // class
-
-
-
-
-
-
-

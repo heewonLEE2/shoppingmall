@@ -12,16 +12,14 @@ import com.sun.net.httpserver.HttpHandler;
 
 import BOproject.service.ProductService;
 import BOproject.service.impl.ProductServiceImpl;
+import BOproject.util.CorsHeaderUtil;
 
 public class ProductListServer implements HttpHandler {
 
 	@Override
 	public void handle(HttpExchange exchange) throws IOException {
-		// CORS 헤더는 모든 응답에 공통으로 설정
-		exchange.getResponseHeaders().set("Access-Control-Allow-Origin", "*");
-		exchange.getResponseHeaders().set("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
-		exchange.getResponseHeaders().set("Access-Control-Allow-Headers", "Content-Type");
-		exchange.getResponseHeaders().set("Content-Type", "application/json; charset=UTF-8");
+        // CORS 헤더는 모든 응답에 공통으로 설정
+        CorsHeaderUtil.getResponseHeaders(exchange);
 
 		Gson gson = new Gson();
 		String response = null;
