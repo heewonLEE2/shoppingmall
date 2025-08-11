@@ -13,7 +13,7 @@
 ### 🖼️ 주요 기능 미리보기
 
 #### 🤖 AI 상품 추천 시스템
-![AI 추천 기능](./demo/ai-recommendation.gif)
+![AI 추천 기능](./gif_files/aifeature.gif)
 *사용자 입력에 따른 AI 개인 맞춤형 상품 추천*
 
 #### 👗 OOTD 게시판
