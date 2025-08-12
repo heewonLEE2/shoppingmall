@@ -17,7 +17,7 @@
 *사용자 입력에 따른 AI 개인 맞춤형 상품 추천*
 
 #### 👗 OOTD 게시판
-![OOTD 게시판](./gif_files/article.gif)
+![OOTD 게시판](./gif_files/articel.gif)
 *사용자들의 스타일 공유 및 커뮤니티 활동*
 
 #### 상품 및 주문현황 보기
@@ -148,24 +148,7 @@ HTML 렌더링은 **브라우저의 JavaScript가 DOM을 갱신**하는 방식�
 
 ### 요청 흐름
 
-```mermaid
-sequenceDiagram
-    autonumber
-    participant U as User (Browser)
-    participant F as Frontend (HTML/CSS/JS)
-    participant A as Axios
-    participant S as Java HttpServer
-    participant D as Oracle (JDBC)
-
-    U->>F: 페이지 로드
-    F->>A: Axios GET /api/products?category=...
-    A->>S: HTTP 요청 (JSON 기대)
-    S->>D: JDBC 쿼리 실행
-    D-->>S: ResultSet 반환
-    S-->>A: 200 OK + JSON
-    A-->>F: 데이터 수신
-    F->>F: JS로 DOM 업데이트(템플릿 렌더)
-
+<img scr="./gif_files/service_flow.png">
 
 ---
 
