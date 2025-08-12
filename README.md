@@ -146,10 +146,17 @@ BOProject/
 서버는 **Oracle**에서 데이터를 조회해 **JSON**으로 응답합니다.  
 HTML 렌더링은 **브라우저의 JavaScript가 DOM을 갱신**하는 방식으로 수행됩니다.
 
-### 요청 흐름
+### 서비스 요청 흐름
 
 <img src="./gif_files/service_flow.png">
 
+### AI 요청 흐름
+
+<img src="./gif_files/ai_flow.png">
+
+### AWS 요청 흐름
+
+<img src="./gif_files/aws_flow.png">
 ---
 
 **💡 "AI와 커뮤니티가 만나는 새로운 패션 쇼핑 경험"**
