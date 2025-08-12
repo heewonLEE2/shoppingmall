@@ -10,17 +10,17 @@
 ### 📺 전체 기능 시연 영상
 > 🔗 **[전체 시연 영상 보기](https://www.youtube.com/watch?v=fc3utoxBQs8&t=16s)**
 
-### 🖼️ 주요 기능 미리보기
+## 🖼️ 주요 기능 미리보기
 
-#### 🤖 AI 상품 추천 시스템
+## 🤖 AI 상품 추천 시스템
 ![AI 추천 기능](./gif_files/aifeature.gif)
 *사용자 입력에 따른 AI 개인 맞춤형 상품 추천*
 
-#### 👗 OOTD 게시판
+## 👗 OOTD 게시판
 ![OOTD 게시판](./gif_files/articel.gif)
 *사용자들의 스타일 공유 및 커뮤니티 활동*
 
-#### 상품 및 주문현황 보기
+## 상품 및 주문현황 보기
 
 ![상품리스트, 구매 후 주문현황 보기]()
 
@@ -148,7 +148,7 @@ HTML 렌더링은 **브라우저의 JavaScript가 DOM을 갱신**하는 방식�
 
 ### 요청 흐름
 
-<img scr="./gif_files/service_flow.png">
+<img src="./gif_files/service_flow.png">
 
 ---
 
